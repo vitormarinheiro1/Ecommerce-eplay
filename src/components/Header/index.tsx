@@ -1,17 +1,27 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { FaCartShopping } from "react-icons/fa6";
-import * as S from './styles';
-
-import logo from '../../assets/images/logo.svg';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { open } from '../../store/reducers/cart';
+import { RootReducer } from '../../store';
+
+import * as S from './styles';
+import logo from '../../assets/images/logo.svg';
+
 
 const Header = () => {
+    const dispatch = useDispatch()
+    const { items } = useSelector((state: RootReducer) => state.cart)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const openCart = () => {
+        dispatch(open())
+    }
 
     return (
         <S.HeaderBar>
-            <S.HeaderRow>
+            <S.HeaderRow onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <div>
                     <S.Hamburguer>
                         <span />
@@ -20,7 +30,7 @@ const Header = () => {
                     </S.Hamburguer>
                     <Link to="">
                         <h1>
-                            <img src={logo} alt="ELOIN" />
+                            <img src={logo} alt="EPLAY" />
                         </h1>
                     </Link>
                     <nav>
@@ -51,8 +61,8 @@ const Header = () => {
                         </S.Links>
                     </nav>
                 </div>
-                <S.CartButton role='button'>
-                    <span>0 - produto(s)</span>
+                <S.CartButton role='button' onClick={openCart}>
+                    {items.length}<span> - produto(s)</span>
                     <FaCartShopping size={23} />
                 </S.CartButton>
             </S.HeaderRow>
