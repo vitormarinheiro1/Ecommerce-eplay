@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { FaCartShopping } from "react-icons/fa6";
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { open } from '../../store/reducers/cart';
@@ -8,6 +7,7 @@ import { RootReducer } from '../../store';
 
 import * as S from './styles';
 import logo from '../../assets/images/logo.svg';
+import cartIcon from '../../assets/images/carrinho.svg';
 
 
 const Header = () => {
@@ -21,9 +21,9 @@ const Header = () => {
 
     return (
         <S.HeaderBar>
-            <S.HeaderRow onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <S.HeaderRow>
                 <div>
-                    <S.Hamburguer>
+                    <S.Hamburguer onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <span />
                         <span />
                         <span />
@@ -63,7 +63,7 @@ const Header = () => {
                 </div>
                 <S.CartButton role='button' onClick={openCart}>
                     {items.length}<span> - produto(s)</span>
-                    <FaCartShopping size={23} />
+                    <img src={cartIcon} alt='Carrinho' />
                 </S.CartButton>
             </S.HeaderRow>
             <S.NavMobile className={isMenuOpen ? 'is-open' : ''}>
