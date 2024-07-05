@@ -61,7 +61,7 @@ const api = createApi({
         getSimulationGames: builder.query<Game[], void>({
             query: () => 'simulacao'
         }),
-        getFightGames: builder.query<Game[], void>({
+        getFigthGames: builder.query<Game[], void>({
             query: () => 'luta'
         }),
         getRpgGames: builder.query<Game[], void>({
@@ -87,7 +87,7 @@ export const {
     useGetActionGamesQuery,
     useGetSportGamesQuery,
     useGetSimulationGamesQuery,
-    useGetFightGamesQuery,
+    useGetFigthGamesQuery,
     useGetRpgGamesQuery,
     useGetGameQuery,
     usePurchaseMutation
