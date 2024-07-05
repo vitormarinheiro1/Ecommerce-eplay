@@ -1,6 +1,7 @@
 import { PacmanLoader } from "react-spinners";
 import { Container } from "./styles";
-import { colors } from "@nextui-org/react";
+import { colors } from "../../styles";
+
 
 const Loader = () => (
     <Container>
