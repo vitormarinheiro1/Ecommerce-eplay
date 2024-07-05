@@ -18,9 +18,9 @@ const Home = () => {
             />
             <ProductsList
                 games={soonGames}
-                title="Promoções"
-                background="gray"
-                id="on-sale"
+                title="Em breve"
+                background="black"
+                id="coming-soon"
                 isLoading={isLoadingSoon}
             />
         </>
