@@ -67,7 +67,7 @@ const api = createApi({
         getRpgGames: builder.query<Game[], void>({
             query: () => 'rpg'
         }),
-        getGame: builder.query<Game[], void>({
+        getGame: builder.query<Game, string>({
             query: (id) => `jogos/${id}`
         }),
         purchase: builder.mutation<PurcharseResponse, PurchasePayload>({

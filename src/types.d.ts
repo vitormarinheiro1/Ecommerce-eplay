@@ -25,6 +25,6 @@ declare type Game = {
     media: {
         thumbnail: string
         cover: string
-        galery: GalleryItem
+        gallery: GalleryItem[]
     }
 }
