@@ -9,7 +9,7 @@
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![Styled-components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-<img src="./src/assets/screenshot.jpg" alt="screenshot do projeto" />
+<img src="./src/assets/images/projeto.png" alt="screenshot do projeto" />
 
 <br>
 
